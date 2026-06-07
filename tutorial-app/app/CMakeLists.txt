@@ -9,5 +9,9 @@ set(CMAKE_CXX_STANDARD 17)
 
 add_executable(WebView2Tutorial WIN32 main.cpp)
 
-# Links (simplified for example)
-# target_link_libraries(WebView2Tutorial PRIVATE WebView2LoaderStatic.lib)
+# Links (Note: You must have the WebView2 SDK installed and visible to CMake)
+# For example, using vcpkg: find_package(webview2 CONFIG REQUIRED)
+# target_link_libraries(WebView2Tutorial PRIVATE webview2::webview2)
+
+# Fallback linking for manual SDK setup
+target_link_libraries(WebView2Tutorial PRIVATE WebView2Loader.dll.lib)
