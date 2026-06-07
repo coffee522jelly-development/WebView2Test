@@ -27,7 +27,7 @@
 	// WebView2 Bridge Logic
 	function sendToNative(action: string, data: any) {
 		if (window.chrome && window.chrome.webview) {
-			window.chrome.webview.postMessage({ action, data });
+			window.chrome.webview.postMessage(JSON.stringify({ action, data }));
 		} else {
 			console.log('Native bridge not available. Action:', action, 'Data:', data);
 		}

@@ -1,0 +1,12 @@
+{
+  "name": "tutorial-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "setup": "npm install --prefix ui",
+    "ui:dev": "npm run dev --prefix ui",
+    "ui:build": "npm run build --prefix ui",
+    "app:build": "node -e \"const fs = require('fs'); if (!fs.existsSync('app/build')) fs.mkdirSync('app/build', { recursive: true })\" && cd app/build && cmake .. && cmake --build .",
+    "build": "npm run ui:build && npm run app:build"
+  }
+}
