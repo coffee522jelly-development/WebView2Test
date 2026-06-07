@@ -55,3 +55,12 @@ UI が `http://localhost:5173` で起動します。`app/main.cpp` はデフォ�
 
 - このサンプルはチュートリアル用です。本番環境では `adapter-static` を使用して生成された静的ファイルを C++ 側からリソースとして読み込む設定が推奨されます。
 - `app/CMakeLists.txt` 内の WebView2 SDK へのパスは、ご自身の環境に合わせて適宜調整してください。
+
+## トラブルシューティング
+
+### 'cmake' が認識されない場合
+`'cmake' は、内部コマンドまたは外部コマンド...として認識されていません` というエラーが出る場合は、CMake の実行パスがシステムの環境変数（PATH）に追加されていません。
+
+1.  **PATH の確認**: CMake のインストール先（例: `C:\Program Files\CMake\bin`）をシステムの環境変数に追加してください。
+2.  **再起動**: 設定後、コマンドプロンプトや VS Code を再起動して反映させてください。
+3.  **開発者用プロンプト**: Visual Studio に付属する **「Developer Command Prompt for VS 2022」** または **「Developer PowerShell for VS 2022」** を使用すると、CMake やコンパイラの設定が自動で有効になるため、こちらでのビルドを推奨します。
